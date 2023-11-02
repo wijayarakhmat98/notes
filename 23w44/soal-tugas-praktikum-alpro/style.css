@@ -1,0 +1,25 @@
+.input {
+	background-color: yellow;
+}
+
+.output {
+	background-color: cyan;
+}
+
+foreignObject math {
+	display: block;
+	text-align: left;
+}
+
+.figure {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+figcaption {
+	box-sizing: border-box;
+	width: 0;
+	min-width: 100%;
+	text-align: center;
+}

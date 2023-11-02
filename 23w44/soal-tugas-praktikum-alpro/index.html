@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tugas Praktikum Alpro</title>
+		<meta name="author" content="Fikri Yudhistira Ajiwijaya">
+		<meta name="description" content="Tugas Praktikum Algoritma Pemrograman Departemen Matematika Fakultas Sains dan Analitika Data Institut Teknologi Sepuluh Nopember Surabaya">
+		<meta name="keywords" content="tugas, praktikum, alpro, matematika, fsad, its, if, else, switch">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Tugas Praktikum Algoritma Pemrograman</h1>
+			<p>Conditionals (if, else, switch)</p>
+			<nav aria-label="primary-navigation">
+				<ol>
+					<li><a href="#guide">Contoh Input Output</a></li>
+					<li><a href="#question-1">Even and Odd Functions</a></li>
+					<li><a href="#question-2">Collision Detection</a></li>
+					<li><a href="#question-3">Polygon Convexity</a></li>
+				</ol>
+			</nav>
+		</header>
+		<hr>
+		<main>
+			<article id="guide">
+				<h2>Contoh Input Output</h2>
+				<p>Tulisan dengan format berikut adalah contoh input output.</p>
+				<p><code>
+					Enter your name: <span class="input">Sebastian</span><br>
+					Welcome <span class="output">Sebastian</span>!
+				</code></p>
+				<p>Tulisan dengan hightlight kuning menandai input dari user.</p>
+				<p>Tulisan dengan hightlight biru menandai output dari hasil perhitungan.</p>
+			</article>
+			<hr>
+			<article id="question-1">
+				<h2>Even and Odd Functions</h2>
+				<section>
+					<h3>Premis Permasalahan</h3>
+					<p>Diberikan 2 fungsi polinomial kuintik.</p>
+					<math display="block">
+						<mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo>
+						<mrow><msub><mi>a</mi><mn>5</mn></msub><msup><mi>x</mi><mn>5</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>a</mi><mn>4</mn></msub><msup><mi>x</mi><mn>4</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>a</mi><mn>3</mn></msub><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>a</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo></mrow>
+						<mrow><msub><mi>a</mi><mn>0</mn></msub></mrow>
+					</math>
+					<math display="block">
+						<mrow><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo>
+						<mrow><msub><mi>b</mi><mn>5</mn></msub><msup><mi>x</mi><mn>5</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>b</mi><mn>4</mn></msub><msup><mi>x</mi><mn>4</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>b</mi><mn>3</mn></msub><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>b</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo>
+						<mrow><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo></mrow>
+						<mrow><msub><mi>b</mi><mn>0</mn></msub></mrow>
+					</math>
+					<p>
+						Sebuah fungsi
+						<math><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></math>
+						adalah <strong>genap</strong> bila ia memenuhi sifat
+						<math>
+							<mrow><mi>h</mi><mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+							<mo>=</mo>
+							<mrow><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+						</math>
+						.
+					</p>
+					<p>
+						Sebuah fungsi
+						<math><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></math>
+						adalah <strong>ganjil</strong> bila ia memenuhi sifat
+						<math>
+							<mrow><mi>h</mi><mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+							<mo>=</mo>
+							<mrow><mo>&#x2212;</mo><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+						</math>
+						.
+					</p>
+					<p>Perhatikan bahwa fungsi genap dan ganjil tidak saling eksklusif. Sebuah fungsi dapat memenuhi sifat fungsi <strong>genap dan ganjil</strong>, hanya <strong>genap</strong>, hanya <strong>ganjil</strong>, maupun <strong>tidak keduanya</strong>.</p>
+				</section>
+				<section>
+					<h3>Instruksi Tugas</h3>
+					<p>
+						Buatlah program yang meminta 10 input dari user, yaitu
+						<math><msub><mi>a</mi><mn>5</mn></msub></math>,
+						<math><msub><mi>a</mi><mn>4</mn></msub></math>,
+						<math><msub><mi>a</mi><mn>3</mn></msub></math>,
+						<math><msub><mi>a</mi><mn>2</mn></msub></math>,
+						<math><msub><mi>a</mi><mn>1</mn></msub></math>,
+						<math><msub><mi>a</mi><mn>0</mn></msub></math>,
+						<math><msub><mi>b</mi><mn>5</mn></msub></math>,
+						<math><msub><mi>b</mi><mn>4</mn></msub></math>,
+						<math><msub><mi>b</mi><mn>3</mn></msub></math>,
+						<math><msub><mi>b</mi><mn>2</mn></msub></math>,
+						<math><msub><mi>b</mi><mn>1</mn></msub></math> dan
+						<math><msub><mi>b</mi><mn>0</mn></msub></math>.
+						Kemudian sebagai output, tentukan apakah fungsi
+						<math><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></math>,
+						<math><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></math> dan
+						<math><mrow>
+							<mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo>
+							<mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo>
+						</mrow></math>
+						masing-masing memenuhi sifat fungsi genap dan fungsi ganjil.
+					</p>
+				</section>
+				<section>
+					<h3>Contoh Input Output</h3>
+					<p><code>
+						Diberikan 2 fungsi polinomial kuintik.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;f(x) = a5*x5^5 + a4*x4^4 + a3*x3^3 + a2*x2^2 + a1*x1 + a0<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;g(x) = b5*x5^5 + b4*x4^4 + b3*x3^3 + b2*x2^2 + b1*x1 + b0<br>
+						<br>
+						Sebuah fungsi h(x) adalah genap bila ia memenuhi h(-x) = h(x).<br>
+						Sebuah fungsi h(x) adalah ganjil bila ia memenuhi h(-x) = -h(x).<br>
+						<br>
+						Masukkan nilai a5: <span class="input">8</span><br>
+						Masukkan nilai a4: <span class="input">0</span><br>
+						Masukkan nilai a3: <span class="input">7</span><br>
+						Masukkan nilai a2: <span class="input">0</span><br>
+						Masukkan nilai a1: <span class="input">4</span><br>
+						Masukkan nilai a0: <span class="input">0</span><br>
+						Masukkan nilai b5: <span class="input">0</span><br>
+						Masukkan nilai b4: <span class="input">5</span><br>
+						Masukkan nilai b3: <span class="input">0</span><br>
+						Masukkan nilai b2: <span class="input">6</span><br>
+						Masukkan nilai b1: <span class="input">0</span><br>
+						Masukkan nilai b0: <span class="input">0</span><br>
+						<br>
+						Fungsi f(x) adalah fungsi <span class="output">ganjil</span>.<br>
+						Fungsi g(x) adalah fungsi <span class="output">genap</span>.<br>
+						Fungsi f(x)g(x) adalah fungsi <span class="output">ganjil</span>.
+					</code></p>
+				</section>
+			</article>
+			<hr>
+			<article id="question-2">
+				<h2>Collision Detection</h2>
+				<section>
+					<h3>Premis Permasalahan</h3>
+					<p>Dikonstruksi 3 macam benda, yaitu segmen garis dari 2 titik, segitiga dari 3 titik, dan lingkaran luar dari 3 titik. Untuk pasangan setiap benda, dapat ditentukan apakah mereka saling berpotongan.</p>
+					<p>Berikut contoh ilustrasi skenario-skenario tersebut.</p>
+					<div class="figure">
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="5" y1="-9" x2="2" y2="-4" stroke="black" stroke-width="0.1" />
+								<line x1="6" y1="-5" x2="8" y2="-1" stroke="black" stroke-width="0.1" />
+								<circle cx="5" cy="-9" r="0.15" />
+								<circle cx="2" cy="-4" r="0.15" />
+								<circle cx="6" cy="-5" r="0.15" />
+								<circle cx="8" cy="-1" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Segmen Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="4" y1="-9" x2="5" y2="-1" stroke="black" stroke-width="0.1" />
+								<line x1="9" y1="-7" x2="1" y2="-4" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-9" r="0.15" />
+								<circle cx="5" cy="-1" r="0.15" />
+								<circle cx="9" cy="-7" r="0.15" />
+								<circle cx="1" cy="-4" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Segmen Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="1" y1="-4" x2="9" y2="-1" stroke="black" stroke-width="0.1" />
+								<polyline points="6 -9 4 -5 9 -7 6 -9" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="1" cy="-4" r="0.15" />
+								<circle cx="9" cy="-1" r="0.15" />
+								<circle cx="6" cy="-9" r="0.15" />
+								<circle cx="4" cy="-5" r="0.15" />
+								<circle cx="9" cy="-7" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Segitiga Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="4" y1="-1" x2="7" y2="-9" stroke="black" stroke-width="0.1" />
+								<polyline points="9 -7 1 -5 8 -3 9 -7" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-1" r="0.15" />
+								<circle cx="7" cy="-9" r="0.15" />
+								<circle cx="9" cy="-7" r="0.15" />
+								<circle cx="1" cy="-5" r="0.15" />
+								<circle cx="8" cy="-3" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Segitiga Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="2" y1="-9" x2="9" y2="-7" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-4" r="3" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="2" cy="-9" r="0.15" />
+								<circle cx="9" cy="-7" r="0.15" />
+								<circle cx="1.500701893821265" cy="-5.659370054102276" r="0.15" />
+								<circle cx="2.440727778937842" cy="-1.437058303311626" r="0.15" />
+								<circle cx="6.943222084829237" cy="-3.419100904310019" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Lingkaran Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<line x1="6" y1="-9" x2="9" y2="-2" stroke="black" stroke-width="0.1" />
+								<circle cx="5" cy="-5" r="3" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="6" cy="-9" r="0.15" />
+								<circle cx="9" cy="-2" r="0.15" />
+								<circle cx="7.961266517844473" cy="-5.480521186102412" r="0.15" />
+								<circle cx="4.620956075370821" cy="-7.975957947149407" r="0.15" />
+								<circle cx="4.075245844598374" cy="-2.146085188365388" r="0.15" />
+							</svg>
+							<figcaption>Segmen-Lingkaran Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<polyline points="6 -1 4 -5 9 -3 6 -1" fill="none" stroke="black" stroke-width="0.1" />
+								<polyline points="5 -7 3 -8 1 -6 5 -7" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="6" cy="-1" r="0.15" />
+								<circle cx="4" cy="-5" r="0.15" />
+								<circle cx="9" cy="-3" r="0.15" />
+								<circle cx="5" cy="-7" r="0.15" />
+								<circle cx="3" cy="-8" r="0.15" />
+								<circle cx="1" cy="-6" r="0.15" />
+							</svg>
+							<figcaption>Segitiga-Segitiga Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<polyline points="9 -9 4 -1 1 -4 9 -9" fill="none" stroke="black" stroke-width="0.1" />
+								<polyline points="6 -9 9 -6 1 -1 6 -9" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="9" cy="-9" r="0.15" />
+								<circle cx="4" cy="-1" r="0.15" />
+								<circle cx="1" cy="-4" r="0.15" />
+								<circle cx="6" cy="-9" r="0.15" />
+								<circle cx="9" cy="-6" r="0.15" />
+								<circle cx="1" cy="-1" r="0.15" />
+							</svg>
+							<figcaption>Segitiga-Segitiga Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<polyline points="5 -1 9 -2 1 -2 5 -1" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="5" cy="-6" r="3" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="5" cy="-1" r="0.15" />
+								<circle cx="9" cy="-2" r="0.15" />
+								<circle cx="1" cy="-2" r="0.15" />
+								<circle cx="7.781862906177329" cy="-7.123048873039203" r="0.15" />
+								<circle cx="6.914640955893946" cy="-8.309577885678143" r="0.15" />
+								<circle cx="7.419727412692692" cy="-7.773392017649659" r="0.15" />
+							</svg>
+							<figcaption>Segitiga-Lingkaran Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<polyline points="9 -8 2 -5 1 -9 9 -8" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-4" r="3.5" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="9" cy="-8" r="0.15" />
+								<circle cx="2" cy="-5" r="0.15" />
+								<circle cx="1" cy="-9" r="0.15" />
+								<circle cx="6.364601449978464" cy="-1.419562056014571" r="0.15" />
+								<circle cx="3.526611616677430" cy="-7.467838438932132" r="0.15" />
+								<circle cx="1.142848816712282" cy="-1.978444382205230" r="0.15" />
+							</svg>
+							<figcaption>Segitiga-Lingkaran Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<circle cx="3" cy="-6" r="2.23606797749979" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="7.5" cy="-2.5" r="1.58113883008419" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="2" cy="-8" r="0.15" />
+								<circle cx="5" cy="-7" r="0.15" />
+								<circle cx="2" cy="-4" r="0.15" />
+								<circle cx="7" cy="-1" r="0.15" />
+								<circle cx="6" cy="-3" r="0.15" />
+								<circle cx="9" cy="-3" r="0.15" />
+							</svg>
+							<figcaption>Lingkaran-Lingkaran Tidak Berpotongan</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="0 -10 10 10" width="10em" height="10em">
+								<circle cx="5.6" cy="-6" r="3.4" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="2" cy="-8" r="1" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-9" r="0.15" />
+								<circle cx="9" cy="-6" r="0.15" />
+								<circle cx="4" cy="-3" r="0.15" />
+								<circle cx="2" cy="-9" r="0.15" />
+								<circle cx="2" cy="-7" r="0.15" />
+								<circle cx="1" cy="-8" r="0.15" />
+							</svg>
+							<figcaption>Lingkaran-Lingkaran Berpotongan</figcaption>
+						</figure>
+					</div>
+				</section>
+				<section>
+					<h3>Instruksi Tugas</h3>
+					<p>Buatlat program yang meminta input 2 benda dari user. Kemudian sebagai output, tentukan apakah pasangan tersebut saling berpotongan.</p>
+				</section>
+				<section>
+					<h3>Contoh Input Output</h3>
+					<p><code>
+						Diberikan 3 macam benda.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;1. Segmen garis yang dikonstruksi dari 2 titik<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;2. Segitiga yang dikonstruksi dari 3 titik<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;3. Lingkaran luar yang dikonstruksi dari 3 titik<br>
+						<br>
+						Pilih tipe benda pertama&nbsp;&nbsp;&nbsp;: <span class="input">2</span><br>
+						Masukkan absis titik ke-1&nbsp;&nbsp;: <span class="input">9</span><br>
+						Masukkan ordinat titik ke-1: <span class="input">7</span><br>
+						Masukkan absis titik ke-2&nbsp;&nbsp;: <span class="input">1</span><br>
+						Masukkan ordinat titik ke-2: <span class="input">5</span><br>
+						Masukkan absis titik ke-3&nbsp;&nbsp;: <span class="input">8</span><br>
+						Masukkan ordinat titik ke-3: <span class="input">3</span><br>
+						<br>
+						Pilih tipe benda kedua&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="input">1</span><br>
+						Masukkan absis titik ke-1&nbsp;&nbsp;: <span class="input">4</span><br>
+						Masukkan ordinat titik ke-1: <span class="input">1</span><br>
+						Masukkan absis titik ke-2&nbsp;&nbsp;: <span class="input">7</span><br>
+						Masukkan ordinat titik ke-2: <span class="input">9</span><br>
+						<br>
+						Pasangan benda ini <span class="output">saling berpotongan</span>.<br>
+					</code></p>
+				</section>
+			</article>
+			<hr>
+			<article id="question-3">
+				<h2>Polygon Convexity</h2>
+				<section>
+					<h3>Premis Permasalahan</h3>
+					<p>
+						Dikonstruksi sebuah poligon
+						<math><mi>Q</mi></math>
+						dari 8 titik
+						<math><mi>A</mi></math>,
+						<math><mi>B</mi></math>,
+						<math><mi>C</mi></math>,
+						<math><mi>D</mi></math>,
+						<math><mi>E</mi></math>,
+						<math><mi>F</mi></math>,
+						<math><mi>G</mi></math> dan
+						<math><mi>H</mi></math>
+						dengan 8 sisi
+						<math><mi>AB</mi></math>,
+						<math><mi>BC</mi></math>,
+						<math><mi>CD</mi></math>,
+						<math><mi>DE</mi></math>,
+						<math><mi>EF</mi></math>,
+						<math><mi>FG</mi></math>,
+						<math><mi>GH</mi></math> dan
+						<math><mi>HA</mi></math>
+						, dimana tidak ada sisi-sisi yang saling berpotongan.
+					</p>
+					<p>Berikut visual perbedaan poligon convex dengan poligon concave.</p>
+					<div class="figure">
+						<figure>
+							<svg viewbox="1 -10 9 9" width="10em" height="10em">
+								<polyline points="6 -2 3 -3 2 -5 3 -8 6 -9 8 -8 9 -6 9 -3 6 -2" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="6" cy="-2" r="0.15" />
+								<circle cx="3" cy="-3" r="0.15" />
+								<circle cx="2" cy="-5" r="0.15" />
+								<circle cx="3" cy="-8" r="0.15" />
+								<circle cx="6" cy="-9" r="0.15" />
+								<circle cx="8" cy="-8" r="0.15" />
+								<circle cx="9" cy="-6" r="0.15" />
+								<circle cx="9" cy="-3" r="0.15" />
+								<foreignObject width="12" height="12" transform="translate(5.7, -1.7) scale(0.05)"><math><mi>A</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(2.4, -2.8) scale(0.05)"><math><mi>B</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(1.3, -5.3) scale(0.05)"><math><mi>C</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(2.4, -8.6) scale(0.05)"><math><mi>D</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(5.8, -9.8) scale(0.05)"><math><mi>E</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(8.2, -8.7) scale(0.05)"><math><mi>F</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(9.2, -6.3) scale(0.05)"><math><mi>G</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(9.1, -2.9) scale(0.05)"><math><mi>H</mi></math></foreignObject>
+							</svg>
+							<figcaption>Convex</figcaption>
+						</figure>
+						<figure>
+							<svg viewbox="1 -10 9 9" width="10em" height="10em">
+								<polyline points="4 -2 4 -4 2 -5 4 -9 6 -7 8 -8 9 -2 7 -3 4 -2" fill="none" stroke="black" stroke-width="0.1" />
+								<circle cx="4" cy="-2" r="0.15" />
+								<circle cx="4" cy="-4" r="0.15" />
+								<circle cx="2" cy="-5" r="0.15" />
+								<circle cx="4" cy="-9" r="0.15" />
+								<circle cx="6" cy="-7" r="0.15" />
+								<circle cx="8" cy="-8" r="0.15" />
+								<circle cx="9" cy="-2" r="0.15" />
+								<circle cx="7" cy="-3" r="0.15" />
+								<foreignObject width="12" height="12" transform="translate(3.5, -1.8) scale(0.05)"><math><mi>A</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(3.3, -3.8) scale(0.05)"><math><mi>B</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(1.3, -5.3) scale(0.05)"><math><mi>C</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(3.8, -9.8) scale(0.05)"><math><mi>D</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(5.9, -7.9) scale(0.05)"><math><mi>E</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(8.0, -8.8) scale(0.05)"><math><mi>F</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(9.0, -1.8) scale(0.05)"><math><mi>G</mi></math></foreignObject>
+								<foreignObject width="12" height="12" transform="translate(6.7, -2.6) scale(0.05)"><math><mi>H</mi></math></foreignObject>
+							</svg>
+							<figcaption>Concave</figcaption>
+						</figure>
+					</div>
+				</section>
+				<section>
+					<h3>Instruksi Tugas</h3>
+					<p>
+						Buatlah program yang meminta 16 input dari user, yaitu absis dan ordinat untuk masing-masing titik
+						<math><mi>A</mi></math>,
+						<math><mi>B</mi></math>,
+						<math><mi>C</mi></math>,
+						<math><mi>D</mi></math>,
+						<math><mi>E</mi></math>,
+						<math><mi>F</mi></math>,
+						<math><mi>G</mi></math> dan
+						<math><mi>H</mi></math>
+						. Kemudian sebagai output, tentukan apakah poligon
+						<math><mi>Q</mi></math>
+						adalah convex atau concave.
+					</p>
+				</section>
+				<section>
+					<h3>Contoh Input Output</h3>
+					<p><code>
+						Dikonstruksi poligon Q dari 8 titik A, B, C, D, E, F, G dan H dengan 8 sisi AB, BC, CD, DE, EF, FG, GH dan HA, dimana tidak ada sisi-sisi yang saling berpotongan.<br>
+						<br>
+						Masukkan absis A&nbsp;&nbsp;: <span class="input">4</span><br>
+						Masukkan ordinat A: <span class="input">2</span><br>
+						Masukkan absis B&nbsp;&nbsp;: <span class="input">4</span><br>
+						Masukkan ordinat B: <span class="input">4</span><br>
+						Masukkan absis C&nbsp;&nbsp;: <span class="input">2</span><br>
+						Masukkan ordinat C: <span class="input">5</span><br>
+						Masukkan absis D&nbsp;&nbsp;: <span class="input">4</span><br>
+						Masukkan ordinat D: <span class="input">9</span><br>
+						Masukkan absis E&nbsp;&nbsp;: <span class="input">6</span><br>
+						Masukkan ordinat E: <span class="input">7</span><br>
+						Masukkan absis F&nbsp;&nbsp;: <span class="input">8</span><br>
+						Masukkan ordinat F: <span class="input">8</span><br>
+						Masukkan absis G&nbsp;&nbsp;: <span class="input">9</span><br>
+						Masukkan ordinat G: <span class="input">2</span><br>
+						Masukkan absis H&nbsp;&nbsp;: <span class="input">7</span><br>
+						Masukkan ordinat H: <span class="input">3</span><br>
+						<br>
+						Poligon Q adalah <span class="output">concave</span>.
+					</code></p>
+				</section>
+			</article>
+		</main>
+		<hr>
+		<footer>
+			<p><a href="#">Back to Top</a></p>
+		</footer>
+	</body>
+</html>
