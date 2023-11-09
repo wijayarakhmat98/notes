@@ -1,0 +1,66 @@
+.input {
+	background-color: yellow;
+}
+
+.output {
+	background-color: cyan;
+}
+
+.figure {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+figcaption {
+	box-sizing: border-box;
+	width: 0;
+	min-width: 100%;
+	text-align: center;
+}
+
+code {
+	font-style: italic;
+}
+
+code.io {
+	font-style: normal;
+}
+
+aside {
+	font-style: italic;
+}
+
+mtd[columnalign="left"] {
+	text-align: -webkit-left;
+}
+
+mtd[columnalign="center"] {
+	text-align: -webkit-center;
+}
+
+mtd[columnalign="right"] {
+	text-align: -webkit-right;
+}
+
+.grid {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 0.5rem;
+	width: 17rem;
+	height: 17rem;
+}
+
+.grid div {
+	box-sizing: border-box;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid black;
+	display: grid;
+	place-content: center;
+}
+
+.small {
+	font-size: 0.2rem;
+}
