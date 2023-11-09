@@ -6,11 +6,6 @@
 	background-color: cyan;
 }
 
-foreignObject math {
-	display: block;
-	text-align: left;
-}
-
 .figure {
 	display: flex;
 	flex-wrap: wrap;
