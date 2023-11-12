@@ -43,7 +43,7 @@ mtd[columnalign="right"] {
 	text-align: -webkit-right;
 }
 
-.grid {
+#grid-1 {
 	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -52,7 +52,7 @@ mtd[columnalign="right"] {
 	height: 17rem;
 }
 
-.grid div {
+#grid-1 div {
 	box-sizing: border-box;
 	width: 3rem;
 	height: 3rem;
@@ -63,4 +63,72 @@ mtd[columnalign="right"] {
 
 .small {
 	font-size: 0.2rem;
+}
+
+#grid-2 {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+	width: 16rem;
+	height: 8rem;
+}
+
+#grid-2 > :nth-child(1) {
+	width: 6rem;
+	height: 2rem;
+	display: grid;
+	justify-content: end;
+	align-content: end;
+}
+
+#grid-2 > :nth-child(3) {
+	width: 6rem;
+	height: 2rem;
+	display: grid;
+	justify-content: start;
+	align-content: end;
+}
+
+#grid-2 > :nth-child(5) {
+	box-sizing: border-box;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid black;
+	display: grid;
+	place-content: center;
+}
+
+#grid-2 > :nth-child(7) {
+	width: 6rem;
+	height: 2rem;
+	display: grid;
+	justify-content: end;
+	align-content: start;
+}
+
+#grid-2 > :nth-child(9) {
+	width: 6rem;
+	height: 2rem;
+	display: grid;
+	justify-content: start;
+	align-content: start;
+}
+
+.grid-3 {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.25rem;
+}
+
+.grid-3 div {
+	box-sizing: border-box;
+	width: 1rem;
+	height: 1rem;
+	border: 1px solid black;
+}
+
+.grid-3 .on {
+	background-color: black;
 }
