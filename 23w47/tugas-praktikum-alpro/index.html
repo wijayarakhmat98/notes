@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="LatinModern/mathfonts.css">
+		<title>Tugas Praktikum Alpro</title>
+		<meta name="author" content="Wijaya Rakhmat">
+		<meta name="description" content="Tugas Praktikum Algoritma Pemrograman Departemen Matematika Fakultas Sains dan Analitika Data Institut Teknologi Sepuluh Nopember Surabaya">
+		<meta name="keywords" content="tugas, praktikum,  alpro, matematika, fsad, its, function, recursive">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Tugas Praktikum Algoritma Pemrograman</h1>
+			<p>Recursive function</p>
+			<nav>
+				<ol>
+					<li><a href="#guide">Contoh Input Output</a></li>
+					<li><a href="#question-1">Polish Notation</a></li>
+				</ol>
+			</nav>
+		</header>
+		<main>
+			<article id="guide">
+				<h2>Contoh Input Output</h2>
+				<p>Tulisan dengan format berikut adalah contoh input output.</p>
+				<p><code>
+					Enter your name: <span class="input">Sebastian</span><br>
+					Welcome <span class="output">Sebastian</span>!
+				</code></p>
+				<p>Tulisan dengan hightlight kuning menandai input dari user.</p>
+				<p>Tulisan dengan hightlight biru menandai output dari hasil perhitungan.</p>
+			</article>
+			<article id="question-1">
+				<h2>Polish Notation</h2>
+				<section>
+					<h3>Premis Permasalahan</h3>
+					<p>Polish notation, atau notasi prefiks, adalah notasi matematika yang operatornya mendahului operannya. Berbeda dari notasi infiks yang lebih umum, dimana operatornya ditempatkan di antara operannya.</p>
+					<p>Ekspresi penjumlahan angka <math><mn>1</mn></math> dan <math><mn>2</mn></math> ditulish dalam Polish notation sebagai</p>
+					<math display="block"><mo>+</mo><mspace width="0.5em" /><mn>1</mn><mspace width="0.5em" /><mn>2</mn></math>
+					<p>bukan sebagai</p>
+					<math display="block"><mn>1</mn><mo>+</mo><mn>2</mn></math>
+					<p>Dalam ekspresi yang lebih kompleks, operator masih mendahului operannya, namun operan itu sendiri dapat berupa ekspresi yang menyertakan lagi operator dan operannya.</p>
+					<p>Misalnya, ekspresi yang biasanya ditulis dalam notasi infiks konvesional sebagai</p>
+					<math display="block"><mn>5</mn><mo>&#xd7;</mo><mo stretchy="false">(</mo><mn>6</mn><mo>&#x2212;</mo><mn>7</mn><mo stretchy="false">)</mo></math>
+					<p>dapat ditulis dalam Polish notation sebagai</p>
+					<math display="block"><mo>&#xd7;</mo><mn>5</mn><mo>&#x2212;</mo><mn>6</mn><mspace width="0.5em" /><mn>7</mn></math>
+					<p>Dalam Polish notation urutan operasi memiliki makna yang tidak ambigu sehingga penggunaan tanda kurung tidak diperlukan.</p>
+				</section>
+				<section>
+					<h3>Instruksi Tugas</h3>
+					<p>Buatlah program yang meminta input dari user sebuah ekspresi dalam Polish notation, kemudian sebagai output hitunglah ekspresi tersebut.</p>
+				</section>
+				<section>
+					<h3>Contoh Input Output</h3>
+					<p>Untuk menghitung ekspresi dalam notasi infiks berikut</p>
+					<math display="block"><mo stretchy="false">(</mo><mn>1.3</mn><mo>+</mo><mn>2.58</mn><mo stretchy="false">)</mo><mo>&#xf7;</mo><mo stretchy="false">(</mo><mn>9.52</mn><mo>+</mo><mn>3.54</mn><mo stretchy="false">)</mo><mo>&#xd7;</mo><mn>3.54</mn><mo>&#x2212;</mo><mn>2.58</mn></math>
+					<p>perlu diubah kedalam Polish notation sebagai</p>
+					<math display="block"><mo>&#x2212;</mo><mo>&#xd7;</mo><mo>&#xf7;</mo><mo>+</mo><mn>1.3</mn><mspace width="0.5em" /><mn>2.58</mn><mo>+</mo><mn>9.52</mn><mspace width="0.5em" /><mn>3.54</mn><mspace width="0.5em" /><mn>3.54</mn><mspace width="0.5em" /><mn>2.58</mn></math>
+					<p>yang kemudian dapat dievaluasikan oleh program.</p>
+					<p><code>
+						+------------------------------------------+<br>
+						| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kalkulator Polish Notation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>
+						+------------------------------------------+<br>
+						<br>
+						Operasi-operasi yang didefinisikan:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;+ a b<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jumlahkan bilangan a dan bilangan b.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;- a b<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kurangkan bilangan a oleh bilangan b.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;* a b<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kalikan bilangan a dan bilangan b.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;/ a b<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bagikan bilangan a oleh bilangan b.<br>
+						<br>
+						Masukkan ekspresi dalam Polish notation:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="input">- * / + 1.3 2.58 + 9.52 3.54 3.54 2.58</span><br>
+						<br>
+						Hasil dari expresi tersebut adalah<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="output">-1.528300</span>
+					</code></p>
+				</section>
+			</article>
+		</main>
+		<footer>
+			<p><a href="#">Back to Top</a></p>
+		</footer>
+	</body>
+</html>
